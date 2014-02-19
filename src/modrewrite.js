@@ -72,6 +72,8 @@ module.exports = function(rules) {
 
         delete opts.headers['host'];
 
+        opts.rejectUnauthorized = false;
+
         var _req = request(opts, function (_res) {
           _res.headers.via = via;
           res.writeHead(_res.statusCode, _res.headers);
